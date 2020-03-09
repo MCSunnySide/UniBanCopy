@@ -1,0 +1,6 @@
+name: UniBanCopy
+version: ${project.version}
+main: com.mcsunnyside.unibancopy.UniBanCopy
+api-version: 1.13
+depend:
+  - LiteBans
