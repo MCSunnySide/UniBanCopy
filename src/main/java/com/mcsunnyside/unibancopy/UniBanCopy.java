@@ -39,7 +39,7 @@ public final class UniBanCopy extends JavaPlugin {
                     bannedPlayers.addAll(banManager.fetchBanList());
                  }
                  HttpRequest.post(new URL(getConfig().getString("post_url")))
-                         .bodyForm(HttpRequest.Form.create().add("list",gson.toJson(bannedPlayers)).add("secret","unibancopy"))
+                         .bodyForm(HttpRequest.Form.create().add("list",gson.toJson(bannedPlayers)).add("secret", getConfig().getString("post_secret", "unibancopy")))
                          .execute()
                          .expectResponseCode(200);
              } catch (IOException e) {
